@@ -1,0 +1,40 @@
+name: CustomItemsGIT
+version: 1.0
+main: me.syntaxerror.customitemsgit.CustomItemsGIT
+api-version: 1.16
+authors: [ SyntaxError ]
+description: Source code for the Custom Items in the videos
+commands:
+  givegrapplinghook:
+    description: gives a grappling hook to the player
+    usage: /<command>
+  giveteleportsword:
+    description: gives a teleport sword to the player
+    usage: /<command>
+  givethegiftingfish:
+    description: gives the gifting fish to the player
+    usage: /<command>
+  giveexplosivebow:
+    description: gives an explosive bow to the player
+    usage: /<command>
+  giveinfinitewaterbucket:
+    description: gives an infinite water bucket to the player
+    usage: /<command>
+  giveinfinitelavabucket:
+    description: gives an infinite lava bucket to the player
+    usage: /<command>
+  givemachinegunbow:
+    description: gives a machine gun bow to the player
+    usage: /<command>
+  givemultibreakpickaxe:
+    description: gives a multibreak pickaxe to the player
+    usage: /<command>
+  givemidaspickaxe:
+    description: gives a midas pickaxe to the player
+    usage: /<command>
+  giveboomerang:
+    description: gives a boomerang to the player
+    usage: /<command>
+  givehomingbow:
+    description: gives a homing bow to the player
+    usage: /<command>
