@@ -1,0 +1,13 @@
+8 May 2021:
+  Added 11 Items into the repository:
+    -Grappling Hook
+    -Teleport Sword
+    -The Gifting Fish
+    -Explosive Bow
+    -Infinite Water Bucket
+    -Infinite Lava Bucket
+    -Machine Gun Bow
+    -Multibreak Pickaxe
+    -Midas Pickaxe
+    -Boomerang
+    -Homing Bow
