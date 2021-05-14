@@ -1,3 +1,8 @@
+14 May 2021:
+  Changed Multibreak Pickaxe:
+    -Added enhanced for loop to reduce lines of code
+    -Added more blocks
+
 8 May 2021:
   Added 11 Items into the repository:
     -Grappling Hook
