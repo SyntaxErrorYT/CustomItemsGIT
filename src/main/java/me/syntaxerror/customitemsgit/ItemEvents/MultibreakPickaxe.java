@@ -26,7 +26,7 @@ public class MultibreakPickaxe implements Listener {
     public void onBreak(BlockBreakEvent event){
         Block block = event.getBlock();
         if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getLore().contains("§6Multibreak:")){
-            if(blockface.equals(BlockFace.UP) || blockface.equals(BlockFace.DOWN)){
+            if (blockface.equals(BlockFace.UP) || blockface.equals(BlockFace.DOWN)) {
                 Block block1 = block.getRelative(BlockFace.EAST);
                 Block block2 = block.getRelative(BlockFace.WEST);
                 Block block3 = block.getRelative(BlockFace.NORTH);
@@ -35,80 +35,43 @@ public class MultibreakPickaxe implements Listener {
                 Block block6 = block.getRelative(BlockFace.SOUTH_EAST);
                 Block block7 = block.getRelative(BlockFace.NORTH_WEST);
                 Block block8 = block.getRelative(BlockFace.NORTH_EAST);
-                if(block1.getType().equals(Material.STONE)){
-                    block1.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block1.getLocation(), new ItemStack(Material.STONE));
+                blocks.add(block1);
+                blocks.add(block2);
+                blocks.add(block3);
+                blocks.add(block4);
+                blocks.add(block5);
+                blocks.add(block6);
+                blocks.add(block7);
+                blocks.add(block8);
+                for(Block b : blocks){
+                    if (b.getType().equals(Material.STONE)) {
+                        b.setType(Material.AIR);
+                        if (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)) {
+                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.STONE));
+                        } else {
+                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.COBBLESTONE));
+                        }
                     }
-                    else{
-                        block.getWorld().dropItemNaturally(block1.getLocation(), new ItemStack(Material.COBBLESTONE));
+                    else if (b.getType().equals(Material.COAL_ORE)) {
+                        b.setType(Material.AIR);
+                        if (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)) {
+                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.COAL_ORE));
+                        } else {
+                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.COAL));
+                        }
                     }
-                }
-                if (block2.getType().equals(Material.STONE)) {
-                    block2.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block2.getLocation(), new ItemStack(Material.STONE));
+                    else if (b.getType().equals(Material.IRON_ORE)) {
+                        b.setType(Material.AIR);
+                        block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.IRON_ORE));
                     }
-                    else{
-                        block.getWorld().dropItemNaturally(block2.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block3.getType().equals(Material.STONE)) {
-                    block3.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block3.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block3.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block4.getType().equals(Material.STONE)) {
-                    block4.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block4.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block4.getLocation(), new ItemStack(Material.COBBLESTONE));
+                    else if (b.getType().equals(Material.GOLD_ORE)) {
+                        b.setType(Material.AIR);
+                        block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.GOLD_ORE));
                     }
                 }
-                if (block5.getType().equals(Material.STONE)) {
-                    block5.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block5.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block5.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block6.getType().equals(Material.STONE)) {
-                    block6.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block6.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block6.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block7.getType().equals(Material.STONE)) {
-                    block7.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block7.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block7.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block8.getType().equals(Material.STONE)) {
-                    block8.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block8.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block8.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
+                blocks.clear();
             }
-            if(blockface.equals(BlockFace.EAST) || blockface.equals(BlockFace.WEST)){
+            if (blockface.equals(BlockFace.EAST) || blockface.equals(BlockFace.WEST)) {
                 Block block1 = block.getRelative(BlockFace.UP);
                 Block block2 = block.getRelative(BlockFace.DOWN);
                 Block block3 = block.getRelative(BlockFace.NORTH);
@@ -117,80 +80,27 @@ public class MultibreakPickaxe implements Listener {
                 Block block6 = block1.getRelative(BlockFace.SOUTH);
                 Block block7 = block2.getRelative(BlockFace.NORTH);
                 Block block8 = block2.getRelative(BlockFace.SOUTH);
-                if(block1.getType().equals(Material.STONE)){
-                    block1.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block1.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block1.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block2.getType().equals(Material.STONE)) {
-                    block2.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block2.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block2.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block3.getType().equals(Material.STONE)) {
-                    block3.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block3.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block3.getLocation(), new ItemStack(Material.COBBLESTONE));
+                blocks.add(block1);
+                blocks.add(block2);
+                blocks.add(block3);
+                blocks.add(block4);
+                blocks.add(block5);
+                blocks.add(block6);
+                blocks.add(block7);
+                blocks.add(block8);
+                for(Block b : blocks){
+                    if (b.getType().equals(Material.STONE)) {
+                        b.setType(Material.AIR);
+                        if (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)) {
+                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.STONE));
+                        } else {
+                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.COBBLESTONE));
+                        }
                     }
                 }
-                if (block4.getType().equals(Material.STONE)) {
-                    block4.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block4.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block4.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block5.getType().equals(Material.STONE)) {
-                    block5.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block5.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block5.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block6.getType().equals(Material.STONE)) {
-                    block6.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block6.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block6.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block7.getType().equals(Material.STONE)) {
-                    block7.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block7.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block7.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block8.getType().equals(Material.STONE)) {
-                    block8.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block8.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block8.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
+                blocks.clear();
             }
-            if(blockface.equals(BlockFace.NORTH) || blockface.equals(BlockFace.SOUTH)){
+            if (blockface.equals(BlockFace.NORTH) || blockface.equals(BlockFace.SOUTH)) {
                 Block block1 = block.getRelative(BlockFace.UP);
                 Block block2 = block.getRelative(BlockFace.DOWN);
                 Block block3 = block.getRelative(BlockFace.EAST);
@@ -199,78 +109,25 @@ public class MultibreakPickaxe implements Listener {
                 Block block6 = block1.getRelative(BlockFace.WEST);
                 Block block7 = block2.getRelative(BlockFace.EAST);
                 Block block8 = block2.getRelative(BlockFace.WEST);
-                if(block1.getType().equals(Material.STONE)){
-                    block1.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block1.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block1.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block2.getType().equals(Material.STONE)) {
-                    block2.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block2.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block2.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block3.getType().equals(Material.STONE)) {
-                    block3.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block3.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block3.getLocation(), new ItemStack(Material.COBBLESTONE));
+                blocks.add(block1);
+                blocks.add(block2);
+                blocks.add(block3);
+                blocks.add(block4);
+                blocks.add(block5);
+                blocks.add(block6);
+                blocks.add(block7);
+                blocks.add(block8);
+                for(Block b : blocks){
+                    if (b.getType().equals(Material.STONE)) {
+                        b.setType(Material.AIR);
+                        if (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)) {
+                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.STONE));
+                        } else {
+                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.COBBLESTONE));
+                        }
                     }
                 }
-                if (block4.getType().equals(Material.STONE)) {
-                    block4.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block4.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block4.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block5.getType().equals(Material.STONE)) {
-                    block5.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block5.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block5.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block6.getType().equals(Material.STONE)) {
-                    block6.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block6.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block6.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block7.getType().equals(Material.STONE)) {
-                    block7.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block7.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block7.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
-                if (block8.getType().equals(Material.STONE)) {
-                    block8.setType(Material.AIR);
-                    if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)){
-                        block.getWorld().dropItemNaturally(block8.getLocation(), new ItemStack(Material.STONE));
-                    }
-                    else{
-                        block.getWorld().dropItemNaturally(block8.getLocation(), new ItemStack(Material.COBBLESTONE));
-                    }
-                }
+                blocks.clear();
             }
         }
     }
