@@ -24,6 +24,8 @@ public final class CustomItemsGIT extends JavaPlugin {
         this.getCommand("givemidaspickaxe").setExecutor(new Commands());
         this.getCommand("giveboomerang").setExecutor(new Commands());
         this.getCommand("givehomingbow").setExecutor(new Commands());
+        this.getCommand("giverocketlauncher").setExecutor(new Commands());
+        this.getCommand("givethrowingaxe").setExecutor(new Commands());
 
         this.getServer().getPluginManager().registerEvents(new TeleportSword(), this);
         this.getServer().getPluginManager().registerEvents(new GrapplingHook(), this);
@@ -35,6 +37,8 @@ public final class CustomItemsGIT extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new MidasPickaxe(), this);
         this.getServer().getPluginManager().registerEvents(new Boomerang(this), this);
         this.getServer().getPluginManager().registerEvents(new HomingBow(this), this);
+        this.getServer().getPluginManager().registerEvents(new RocketLauncher(this), this);
+        this.getServer().getPluginManager().registerEvents(new ThrowingAxe(this), this);
 
         GrapplingHookCooldown.setupCooldown();
     }
