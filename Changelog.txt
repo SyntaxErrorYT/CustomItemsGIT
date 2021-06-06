@@ -1,3 +1,14 @@
+6 June 2021:
+  Changed CustomItemsGIT.java:
+    -Listed commands for both Throwing Axe and Rocket Launcher
+    -Registered events for both Throwing Axe and Rocket Launcher
+  Changed plugin.yml:
+    -Listed commands for both Throwing Axe and Rocket Launcher
+  Changed Commands.java:
+    -Created commands for both Throwing Axe and Rocket Launcher
+  Added ThrowingAxe.java in ItemEvents
+  Added RocketLauncher.java in ItemEvents
+
 14 May 2021:
   Changed Multibreak Pickaxe:
     -Added enhanced for loop to reduce lines of code
