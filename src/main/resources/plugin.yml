@@ -38,3 +38,9 @@ commands:
   givehomingbow:
     description: gives a homing bow to the player
     usage: /<command>
+  giverocketlauncher:
+    description: gives a rocket launcher to the player
+    usage: /<command>
+  givethrowingaxe:
+    description: gives a throwing axe to the player
+    usage: /<command>
