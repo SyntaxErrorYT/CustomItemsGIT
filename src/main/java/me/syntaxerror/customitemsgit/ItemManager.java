@@ -26,6 +26,8 @@ public class ItemManager {
     public static ItemStack MidasPickaxe;
     public static ItemStack Boomerang;
     public static ItemStack HomingBow;
+    public static ItemStack RocketLauncher;
+    public static ItemStack ThrowingAxe;
 
     public static void init() {
         createGrapplingHook();
@@ -39,6 +41,8 @@ public class ItemManager {
         createMidasPickaxe();
         createBoomerang();
         createHomingBow();
+        createRocketLauncher();
+        createThrowingAxe();
     }
 
     private static void createGrapplingHook() {
@@ -186,5 +190,42 @@ public class ItemManager {
         meta.setLore(lore);
         item.setItemMeta(meta);
         HomingBow = item;
+    }
+    private static void createRocketLauncher(){
+        ItemStack item = new ItemStack(Material.GOLDEN_SHOVEL, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Rocket Launcher");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7Damage: §c+70");
+        lore.add("");
+        lore.add("§6Item Ability: Ricochet Rocket §eRIGHT CLICK");
+        lore.add("§7Fires a rocket that explodes for");
+        lore.add("§c0 §7damage and when ricocheting");
+        lore.add("§7off the ground creates explosions for");
+        lore.add("§7half the damage.");
+        lore.add("");
+        meta.setLore(lore);
+        AttributeModifier damage = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", 70.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, damage);
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        meta.setUnbreakable(true);
+        item.setItemMeta(meta);
+        RocketLauncher = item;
+    }
+    private static void createThrowingAxe(){
+        ItemStack item = new ItemStack(Material.NETHERITE_AXE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Throwing Axe");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7Damage: §c+70");
+        lore.add("");
+        lore.add("§6Item Ability: Throw §eRIGHT CLICK");
+        lore.add("§7Throw your axe and deal");
+        lore.add("§c1,000 §7damage.");
+        meta.setLore(lore);
+        AttributeModifier damage = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", 70.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, damage);
+        item.setItemMeta(meta);
+        ThrowingAxe = item;
     }
 }
