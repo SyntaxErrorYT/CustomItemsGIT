@@ -28,6 +28,7 @@ public class ItemManager {
     public static ItemStack HomingBow;
     public static ItemStack RocketLauncher;
     public static ItemStack ThrowingAxe;
+    public static ItemStack UndeadSword;
 
     public static void init() {
         createGrapplingHook();
@@ -43,6 +44,7 @@ public class ItemManager {
         createHomingBow();
         createRocketLauncher();
         createThrowingAxe();
+        createUndeadSword();
     }
 
     private static void createGrapplingHook() {
@@ -227,5 +229,25 @@ public class ItemManager {
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, damage);
         item.setItemMeta(meta);
         ThrowingAxe = item;
+    }
+    private static void createUndeadSword(){
+        ItemStack item = new ItemStack(Material.IRON_SWORD, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Undead Sword");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7Damage: §c+70");
+        lore.add("");
+        lore.add("§6Item Ability: Damage Multiplier");
+        lore.add("§7Damage dealt to some mobs will be multiplied.");
+        lore.add("§7Zombies: ");
+        lore.add("§7Skeletons: ");
+        lore.add("");
+        meta.setLore(lore);
+        AttributeModifier damage = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", 70.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, damage);
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        meta.setUnbreakable(true);
+        item.setItemMeta(meta);
+        UndeadSword = item;
     }
 }
