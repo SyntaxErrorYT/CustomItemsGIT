@@ -57,7 +57,12 @@ public class Boomerang implements Listener {
                         as.teleport(as.getLocation().subtract(vector.normalize()));
                         if(i >= distance * 2){
                             as.remove();
-                            player.getInventory().addItem(ItemManager.Boomerang);
+                            if(player.getInventory().firstEmpty() != -1){
+                                player.getInventory().addItem(ItemManager.Boomerang);
+                            }
+                            else{
+                                player.getWorld().dropItemNaturally(player.getLocation(), ItemManager.Boomerang);
+                            }
                             cancel();
                         }
                     }
@@ -66,13 +71,28 @@ public class Boomerang implements Listener {
                     }
 
                     i++;
-
+                    
                     for(Entity entity : as.getLocation().getChunk().getEntities()){
-                        if(as.getLocation().distanceSquared(entity.getLocation()) < 1){
-                            if(entity != player){
-                                LivingEntity livingentity = (LivingEntity) entity;
-                                livingentity.damage(1000, player);
+                        if(!as.isDead()) {
+                            if (as.getLocation().distanceSquared(entity.getLocation()) < 1) {
+                                if (entity != player) {
+                                    LivingEntity livingentity = (LivingEntity) entity;
+                                    livingentity.damage(1000, player);
+                                }
                             }
+                        }
+                    }
+
+                    if(as.getTargetBlockExact(1) != null && !as.getTargetBlockExact(1).isPassable()){
+                        if(!as.isDead()){
+                            as.remove();
+                            if(player.getInventory().firstEmpty() != -1){
+                                player.getInventory().addItem(ItemManager.Boomerang);
+                            }
+                            else{
+                                player.getWorld().dropItemNaturally(player.getLocation(), ItemManager.Boomerang);
+                            }
+                            cancel();
                         }
                     }
                 }
