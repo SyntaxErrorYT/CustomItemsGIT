@@ -1,3 +1,8 @@
+8 June 2021:
+  Changed Boomerang.java:
+    -Made it drop the item at the player's location if the player's inventory is full
+    -Made boomerang disappear if it is hitting a block in front of it
+
 6 June 2021:
   Changed CustomItemsGIT.java:
     -Listed commands for both Throwing Axe and Rocket Launcher
