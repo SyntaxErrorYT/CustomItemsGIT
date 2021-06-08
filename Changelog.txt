@@ -15,7 +15,7 @@
   Added RocketLauncher.java in ItemEvents
 
 14 May 2021:
-  Changed Multibreak Pickaxe:
+  Changed MultibreakPickaxe.java:
     -Added enhanced for loop to reduce lines of code
     -Added more blocks
 
