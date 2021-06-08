@@ -2,6 +2,16 @@
   Changed Boomerang.java:
     -Made it drop the item at the player's location if the player's inventory is full
     -Made boomerang disappear if it is hitting a block in front of it
+  Changed CustomItemsGIT.java:
+    -Listed commands for Undead Sword (Damage Multiplier Sword)
+    -Registered events for Undead Sword (Damage Multiplier Sword)
+    -Added two lines of code for config.yml set up
+  Changed plugin.yml:
+    -Listed commands for Undead Sword (Damage Multiplier Sword)
+  Changed Commands.java:
+    -Created commands for Undead Sword (Damage Multiplier Sword)
+  Added DamageMultiplierSword.java in ItemEvents
+  Added config.yml in Resources
 
 6 June 2021:
   Changed CustomItemsGIT.java:
