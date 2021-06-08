@@ -44,3 +44,6 @@ commands:
   givethrowingaxe:
     description: gives a throwing axe to the player
     usage: /<command>
+  giveundeadsword:
+    description: gives the player an undead sword
+    usage: /<command>
