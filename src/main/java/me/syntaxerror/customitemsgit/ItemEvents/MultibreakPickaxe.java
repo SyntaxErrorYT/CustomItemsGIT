@@ -12,6 +12,8 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class MultibreakPickaxe implements Listener {
+    
+    List<Block> blocks = new ArrayList<>();
 
     BlockFace blockface = null;
 
