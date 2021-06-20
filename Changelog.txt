@@ -1,3 +1,7 @@
+20 June 2021:
+  Changed MultibreakPickaxe.java:
+    -Added an ArrayList (Bug Fix)
+
 8 June 2021:
   Changed Boomerang.java:
     -Made it drop the item at the player's location if the player's inventory is full
@@ -27,7 +31,7 @@
 14 May 2021:
   Changed MultibreakPickaxe.java:
     -Added enhanced for loop to reduce lines of code
-    -Added more blocks
+    -Added more multibreakable blocks
 
 8 May 2021:
   Added 11 Items into the repository:
