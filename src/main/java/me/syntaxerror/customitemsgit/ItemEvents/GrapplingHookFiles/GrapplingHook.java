@@ -6,8 +6,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerFishEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 public class GrapplingHook implements Listener {
 
@@ -15,11 +13,9 @@ public class GrapplingHook implements Listener {
     public void onFish(PlayerFishEvent event){
 
         Player player = event.getPlayer();
-        ItemStack item = player.getInventory().getItemInMainHand();
-        ItemMeta meta = item.getItemMeta();
-        String name = meta.getDisplayName();
 
-        if (name.equals("§9Grappling Hook")) {
+        if (player.getInventory().getItemInMainHand().getItemMeta() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore() != null 
+        && player.getInventory().getItemInMainHand().getItemMeta().getLore().contains("§7Travel in style with this tool...")) {
             if (event.getState().equals(PlayerFishEvent.State.REEL_IN)) {
                 if (GrapplingHookCooldown.checkCooldown(player)) {
                     Location playerLocation = player.getLocation();
