@@ -13,6 +13,9 @@
     -Added a check if the damager is a Player to prevent ClassCastException console spam
   Changed Boomerang.java:
     -Made the armor stand spawn as a marker, replacing the lines of code that prevents players from taking bones from armor stands
+  Changed GrapplingHook.java:
+    -Comparing lore and not display name of item
+    -Made the code shorter by removing unused variables
 
 20 June 2021:
   Changed MultibreakPickaxe.java:
