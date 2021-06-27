@@ -16,6 +16,9 @@
   Changed GrapplingHook.java:
     -Comparing lore and not display name of item
     -Made the code shorter by removing unused variables
+  Changed TeleportSword.java:
+    -Comparing lore and not display name of item
+    -Made the code shorter by removing unused variables
 
 20 June 2021:
   Changed MultibreakPickaxe.java:
