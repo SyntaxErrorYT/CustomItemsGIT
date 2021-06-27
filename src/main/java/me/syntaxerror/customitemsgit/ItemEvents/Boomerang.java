@@ -35,6 +35,7 @@ public class Boomerang implements Listener {
             as.setArms(true);
             as.setGravity(false);
             as.setVisible(false);
+            as.setMarker(true);
             as.setItemInHand(new ItemStack(Material.BONE));
             as.setRightArmPose(new EulerAngle(Math.toRadians(0), Math.toRadians(120), Math.toRadians(0)));
 
@@ -99,16 +100,6 @@ public class Boomerang implements Listener {
             }.runTaskTimer(plugin, 1L, 1L);
 
             event.setCancelled(true);
-        }
-    }
-
-    @EventHandler
-    public void onEntity(PlayerInteractAtEntityEvent event){
-        if(event.getRightClicked() instanceof ArmorStand){
-            ArmorStand as = (ArmorStand) event.getRightClicked();
-            if(as.getItemInHand().getType().equals(Material.BONE)){
-                event.setCancelled(true);
-            }
         }
     }
 }
