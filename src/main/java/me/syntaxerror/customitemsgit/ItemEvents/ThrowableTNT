@@ -1,4 +1,4 @@
-package me.syntaxerror.customitemsgit;
+package me.syntaxerror.customitemsgit.ItemEvents;
 
 import org.bukkit.Material;
 import org.bukkit.entity.FallingBlock;
