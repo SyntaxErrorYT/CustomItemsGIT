@@ -71,18 +71,19 @@ public class DamageMultiplierSword implements Listener {
 
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent event){
-        Player player = (Player) event.getDamager();
-        if(player.getInventory().getItemInMainHand().getItemMeta() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore() != null
-                && player.getInventory().getItemInMainHand().getItemMeta().getLore().contains("§6Item Ability: Damage Multiplier")){
-            if(event.getEntity() instanceof Zombie){
-                int zombie = plugin.getConfig().getInt("undeadsword.zombie");
-                event.setDamage(event.getDamage() + (event.getDamage() * zombie / 100));
+        if(event.getDamager() instanceof Player) {
+            Player player = (Player) event.getDamager();
+            if (player.getInventory().getItemInMainHand().getItemMeta() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore() != null
+                    && player.getInventory().getItemInMainHand().getItemMeta().getLore().contains("§6Item Ability: Damage Multiplier")) {
+                if (event.getEntity() instanceof Zombie) {
+                    int zombie = plugin.getConfig().getInt("undeadsword.zombie");
+                    event.setDamage(event.getDamage() + (event.getDamage() * zombie / 100));
+                } else if (event.getEntity() instanceof Skeleton) {
+                    int skeleton = plugin.getConfig().getInt("undeadsword.skeleton");
+                    event.setDamage(event.getDamage() + (event.getDamage() * skeleton / 100));
+                }
+                player.sendMessage(String.valueOf(event.getDamage()));
             }
-            else if(event.getEntity() instanceof Skeleton){
-                int skeleton = plugin.getConfig().getInt("undeadsword.skeleton");
-                event.setDamage(event.getDamage() + (event.getDamage() * skeleton / 100));
-            }
-            player.sendMessage(String.valueOf(event.getDamage()));
         }
     }
 }
