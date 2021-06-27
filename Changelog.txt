@@ -9,6 +9,8 @@
   Changed Commands.java:
     -Created commands for Throwable TNT
   Added ThrowableTNT.java in ItemEvents
+  Changed DamageMultiplierSword.java:
+    -Added a check if the damager is a Player to prevent ClassCastException console spam
 
 20 June 2021:
   Changed MultibreakPickaxe.java:
