@@ -47,3 +47,6 @@ commands:
   giveundeadsword:
     description: gives the player an undead sword
     usage: /<command>
+  givethrowabletnt:
+    description: gives the player a throwable tnt
+    usage: /<command>
