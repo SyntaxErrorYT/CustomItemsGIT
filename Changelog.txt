@@ -1,3 +1,15 @@
+27 June 2021:
+  Changed CustomItemsGIT.java:
+    -Listed commands for Throwable TNT
+    -Registered events for Throwable TNT
+   Changed ItemManager.java:
+    -Added item designs for Throwable TNT
+  Changed plugin.yml:
+    -Listed commands for Throwable TNT
+  Changed Commands.java:
+    -Created commands for Throwable TNT
+  Added ThrowableTNT.java in ItemEvents
+
 20 June 2021:
   Changed MultibreakPickaxe.java:
     -Added an ArrayList (Bug Fix)
@@ -10,6 +22,8 @@
     -Listed commands for Undead Sword (Damage Multiplier Sword)
     -Registered events for Undead Sword (Damage Multiplier Sword)
     -Added two lines of code for config.yml set up
+  Changed ItemManager.java:
+    -Added item designs for Undead Sword (Damage Multiplier Sword)
   Changed plugin.yml:
     -Listed commands for Undead Sword (Damage Multiplier Sword)
   Changed Commands.java:
@@ -21,6 +35,8 @@
   Changed CustomItemsGIT.java:
     -Listed commands for both Throwing Axe and Rocket Launcher
     -Registered events for both Throwing Axe and Rocket Launcher
+  Changed ItemManager.java:
+    -Added item designs for Throwing Axe and Rocket Launcher
   Changed plugin.yml:
     -Listed commands for both Throwing Axe and Rocket Launcher
   Changed Commands.java:
