@@ -29,6 +29,7 @@ public class ItemManager {
     public static ItemStack RocketLauncher;
     public static ItemStack ThrowingAxe;
     public static ItemStack UndeadSword;
+    public static ItemStack ThrowableTNT;
 
     public static void init() {
         createGrapplingHook();
@@ -45,6 +46,7 @@ public class ItemManager {
         createRocketLauncher();
         createThrowingAxe();
         createUndeadSword();
+        createThrowableTNT();
     }
 
     private static void createGrapplingHook() {
@@ -249,5 +251,18 @@ public class ItemManager {
         meta.setUnbreakable(true);
         item.setItemMeta(meta);
         UndeadSword = item;
+    }
+    private static void createThrowableTNT(){
+        ItemStack item = new ItemStack(Material.TNT, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Throwable TNT");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: Throwable TNT");
+        lore.add("§7Throws TNT......");
+        meta.setLore(lore);
+        meta.addEnchant(Enchantment.DURABILITY, 1, false);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(meta);
+        ThrowableTNT = item;
     }
 }
