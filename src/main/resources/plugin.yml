@@ -50,3 +50,6 @@ commands:
   givethrowabletnt:
     description: gives the player a throwable tnt
     usage: /<command>
+  givelightningaxe:
+    description: gives the player a lightning axe
+    usage: /<command>
