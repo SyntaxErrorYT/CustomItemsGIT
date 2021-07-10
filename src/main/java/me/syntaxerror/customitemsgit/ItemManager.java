@@ -30,6 +30,7 @@ public class ItemManager {
     public static ItemStack ThrowingAxe;
     public static ItemStack UndeadSword;
     public static ItemStack ThrowableTNT;
+    public static ItemStack LightningAxe;
 
     public static void init() {
         createGrapplingHook();
@@ -47,6 +48,7 @@ public class ItemManager {
         createThrowingAxe();
         createUndeadSword();
         createThrowableTNT();
+        createLightningAxe();
     }
 
     private static void createGrapplingHook() {
@@ -264,5 +266,24 @@ public class ItemManager {
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(meta);
         ThrowableTNT = item;
+    }
+    private static void createLightningAxe(){
+        ItemStack item = new ItemStack(Material.IRON_AXE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Lightning Axe");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7Strike your opponent with");
+        lore.add("§7lightning everytime you hit them,");
+        lore.add("§7dealing §c1000 §7damage.");
+        lore.add("");
+        lore.add("§6Item Ability: Stormbreaker");
+        lore.add("§7When right clicked, strike all");
+        lore.add("§7mobs around you in a 12 block radius");
+        lore.add("§7dealing §c1000 §7damage.");
+        meta.setLore(lore);
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        item.setItemMeta(meta);
+        LightningAxe = item;
     }
 }
