@@ -1,3 +1,14 @@
+11 June 2021:
+  Changed CustomItemsGIT.java:
+    -Listed commands for Lightning Axe
+    -Registered events for Lightning Axe
+   Changed ItemManager.java:
+    -Added item designs for Lightning Axe
+  Changed plugin.yml:
+    -Listed commands for Lightning Axe
+  Changed Commands.java:
+    -Created commands for Lightning Axe
+
 27 June 2021:
   Changed CustomItemsGIT.java:
     -Listed commands for Throwable TNT
