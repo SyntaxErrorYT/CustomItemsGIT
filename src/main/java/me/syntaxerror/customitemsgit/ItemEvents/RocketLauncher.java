@@ -70,9 +70,10 @@ public class RocketLauncher implements Listener {
                                     }
                                 }
                             }
+                            cancel();
                         }
                     }
-                }.runTaskTimer(plugin, firework.getFireworkMeta().getPower() * 10, 0L);
+                }.runTaskTimer(plugin, firework.getFireworkMeta().getPower() * 10 + 10, 0L);
 
                 event.setCancelled(true);
             }
@@ -97,7 +98,7 @@ public class RocketLauncher implements Listener {
             if(event.getHitEntity() != null){
                 Firework newfirework = (Firework) firework.getWorld().spawnEntity(firework.getLocation(), EntityType.FIREWORK);
                 FireworkMeta meta = newfirework.getFireworkMeta();
-                meta.setPower(firework.getFireworkMeta().getPower() - (firework.getTicksLived() / 10));
+                meta.setPower(firework.getFireworkMeta().getPower() - (firework.getTicksLived() / 10) - 1);
                 newfirework.setFireworkMeta(meta);
                 newfirework.setShotAtAngle(true);
                 newfirework.setRotation(firework.getLocation().getYaw(), firework.getLocation().getPitch());
@@ -122,9 +123,10 @@ public class RocketLauncher implements Listener {
                                     }
                                 }
                             }
+                            cancel();
                         }
                     }
-                }.runTaskTimer(plugin, newfirework.getFireworkMeta().getPower() * 10, 0L);
+                }.runTaskTimer(plugin, newfirework.getFireworkMeta().getPower() * 10 + 10, 0L);
             }
         }
     }
