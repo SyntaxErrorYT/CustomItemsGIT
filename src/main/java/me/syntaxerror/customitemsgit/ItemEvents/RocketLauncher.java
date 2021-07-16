@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RocketLauncher implements Listener {
-    
+
     CustomItemsGIT plugin;
 
     public RocketLauncher(CustomItemsGIT plugin){
@@ -57,6 +57,9 @@ public class RocketLauncher implements Listener {
 
                     public void run() {
                         if (firework.isDead()) {
+                            cancel();
+                        }
+                        else{
                             firework.getWorld().spawnParticle(Particle.EXPLOSION_HUGE, firework.getLocation(), 10);
                             firework.getWorld().playSound(firework.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 5, 5);
                             for (Entity entity : firework.getNearbyEntities(5, 5, 5)) {
@@ -67,11 +70,9 @@ public class RocketLauncher implements Listener {
                                     }
                                 }
                             }
-
-                            cancel();
                         }
                     }
-                }.runTaskTimer(plugin, 0L, 1L);
+                }.runTaskTimer(plugin, firework.getFireworkMeta().getPower() * 10, 0L);
 
                 event.setCancelled(true);
             }
@@ -92,6 +93,38 @@ public class RocketLauncher implements Listener {
                         livingentity.damage(Integer.parseInt(firework.getCustomName()) / 2);
                     }
                 }
+            }
+            if(event.getHitEntity() != null){
+                Firework newfirework = (Firework) firework.getWorld().spawnEntity(firework.getLocation(), EntityType.FIREWORK);
+                FireworkMeta meta = newfirework.getFireworkMeta();
+                meta.setPower(firework.getFireworkMeta().getPower() - (firework.getTicksLived() / 10));
+                newfirework.setFireworkMeta(meta);
+                newfirework.setShotAtAngle(true);
+                newfirework.setRotation(firework.getLocation().getYaw(), firework.getLocation().getPitch());
+                newfirework.setVelocity(new Vector(firework.getFacing().getModX(), firework.getFacing().getModY(), firework.getFacing().getModZ()));
+                newfirework.setBounce(true);
+                newfirework.setCustomName(firework.getCustomName());
+                newfirework.setShooter(firework.getShooter());
+                new BukkitRunnable() {
+
+                    public void run() {
+                        if (newfirework.isDead()) {
+                            cancel();
+                        }
+                        else{
+                            newfirework.getWorld().spawnParticle(Particle.EXPLOSION_HUGE, newfirework.getLocation(), 10);
+                            newfirework.getWorld().playSound(newfirework.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 5, 5);
+                            for (Entity entity : newfirework.getNearbyEntities(5, 5, 5)) {
+                                if (entity instanceof LivingEntity) {
+                                    LivingEntity livingentity = (LivingEntity) entity;
+                                    if (!livingentity.equals(newfirework.getShooter()) && !livingentity.equals(newfirework)) {
+                                        livingentity.damage(Integer.parseInt(newfirework.getCustomName()));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }.runTaskTimer(plugin, newfirework.getFireworkMeta().getPower() * 10, 0L);
             }
         }
     }
