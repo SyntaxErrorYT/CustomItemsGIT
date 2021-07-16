@@ -1,4 +1,8 @@
-11 June 2021:
+16 July 2021:
+  Changed RocketLauncher.java:
+    -Changed codes so that rocket will ricochet when hitting an entity rather than creating the large explosion straightaway
+
+11 July 2021:
   Changed CustomItemsGIT.java:
     -Listed commands for Lightning Axe
     -Registered events for Lightning Axe
