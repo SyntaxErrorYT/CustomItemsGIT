@@ -31,6 +31,7 @@ public class ItemManager {
     public static ItemStack UndeadSword;
     public static ItemStack ThrowableTNT;
     public static ItemStack LightningAxe;
+    public static ItemStack AutoSmeltPickaxe;
 
     public static void init() {
         createGrapplingHook();
@@ -49,6 +50,7 @@ public class ItemManager {
         createUndeadSword();
         createThrowableTNT();
         createLightningAxe();
+        createAutoSmeltPickaxe();
     }
 
     private static void createGrapplingHook() {
@@ -285,5 +287,16 @@ public class ItemManager {
         meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         item.setItemMeta(meta);
         LightningAxe = item;
+    }
+    private static void createAutoSmeltPickaxe(){
+        ItemStack item = new ItemStack(Material.NETHERITE_PICKAXE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6AutoSmelt Pickaxe");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: AutoSmelt");
+        lore.add("§7Automatically smelt block drops.");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        AutoSmeltPickaxe = item;
     }
 }
