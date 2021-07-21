@@ -53,3 +53,6 @@ commands:
   givelightningaxe:
     description: gives the player a lightning axe
     usage: /<command>
+  giveautosmeltpickaxe:
+    description: gives the player an autosmelt pickaxe
+    usage: /<command>
