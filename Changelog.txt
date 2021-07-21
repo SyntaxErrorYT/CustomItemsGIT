@@ -1,3 +1,15 @@
+21 July 2021:
+  Changed CustomItemsGIT.java:
+    -Listed commands for AutoSmelt Pickaxe
+    -Registered events for AutoSmelt Pickaxe
+  Changed ItemManager.java:
+    -Added item designs for AutoSmelt Pickaxe
+  Changed plugin.yml:
+    -Listed commands for AutoSmelt Pickaxe
+  Changed Commands.java:
+    -Created commands for AutoSmelt Pickaxe
+  Added AutoSmeltPickaxe.java
+
 16 July 2021:
   Changed RocketLauncher.java:
     -Changed codes so that rocket will ricochet when hitting an entity rather than creating the large explosion straightaway
@@ -6,12 +18,13 @@
   Changed CustomItemsGIT.java:
     -Listed commands for Lightning Axe
     -Registered events for Lightning Axe
-   Changed ItemManager.java:
+  Changed ItemManager.java:
     -Added item designs for Lightning Axe
   Changed plugin.yml:
     -Listed commands for Lightning Axe
   Changed Commands.java:
     -Created commands for Lightning Axe
+  Added LightningAxe.java
 
 27 June 2021:
   Changed CustomItemsGIT.java:
