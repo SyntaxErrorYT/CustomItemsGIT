@@ -1,4 +1,6 @@
 21 July 2021:
+  Changed ExplosiveBow.java:
+    -Name the arrow on shooting, creating the explosion if that arrow lands so that the player doesn't need to hold the Explosive Bow as the arrow lands to create the explosion.
   Changed CustomItemsGIT.java:
     -Listed commands for AutoSmelt Pickaxe
     -Registered events for AutoSmelt Pickaxe
