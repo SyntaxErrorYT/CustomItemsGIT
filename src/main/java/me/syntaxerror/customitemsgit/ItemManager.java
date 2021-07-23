@@ -32,6 +32,7 @@ public class ItemManager {
     public static ItemStack ThrowableTNT;
     public static ItemStack LightningAxe;
     public static ItemStack AutoSmeltPickaxe;
+    public static ItemStack SmokeBow;
 
     public static void init() {
         createGrapplingHook();
@@ -51,6 +52,7 @@ public class ItemManager {
         createThrowableTNT();
         createLightningAxe();
         createAutoSmeltPickaxe();
+        createSmokeBow();
     }
 
     private static void createGrapplingHook() {
@@ -298,5 +300,19 @@ public class ItemManager {
         meta.setLore(lore);
         item.setItemMeta(meta);
         AutoSmeltPickaxe = item;
+    }
+    private static void createSmokeBow(){
+        ItemStack item = new ItemStack(Material.BOW, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Smoke Bow");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: Wither Smoke");
+        lore.add("§7Creates a smoke bomb at the");
+        lore.add("§7location where the arrow landed,");
+        lore.add("§7and gives the wither effect to");
+        lore.add("§7all mobs in a 4 block radius.");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        SmokeBow = item;
     }
 }
