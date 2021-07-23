@@ -1,3 +1,15 @@
+23 July 2021:
+  Changed CustomItemsGIT.java:
+    -Listed commands for Smoke Bow
+    -Registered events for Smoke Bow
+  Changed ItemManager.java:
+    -Added item designs for Smoke Bow
+  Changed plugin.yml:
+    -Listed commands for Smoke Bow
+  Changed Commands.java:
+    -Created commands for Smoke Bow
+  Added SmokeBow.java
+
 21 July 2021:
   Changed ExplosiveBow.java:
     -Name the arrow on shooting, creating the explosion if that arrow lands so that the player doesn't need to hold the Explosive Bow as the arrow lands to create the explosion.
