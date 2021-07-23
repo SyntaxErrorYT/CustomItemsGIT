@@ -56,3 +56,6 @@ commands:
   giveautosmeltpickaxe:
     description: gives the player an autosmelt pickaxe
     usage: /<command>
+  givesmokebow:
+    description: gives the player a smoke bow
+    usage: /<command>
