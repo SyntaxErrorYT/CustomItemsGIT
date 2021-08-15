@@ -68,6 +68,15 @@ public class Commands implements CommandExecutor {
                 if(cmd.getName().equalsIgnoreCase("givesmokebow")){
                     player.getInventory().addItem(ItemManager.SmokeBow);
                 }
+                if(cmd.getName().equalsIgnoreCase("givefireball")){
+                    player.getInventory().addItem(ItemManager.Fireball);
+                }
+                if(cmd.getName().equalsIgnoreCase("givetripleshotbow")){
+                    player.getInventory().addItem(ItemManager.TripleShotBow);
+                }
+                if(cmd.getName().equalsIgnoreCase("givebomberelytra")){
+                    player.getInventory().addItem(ItemManager.BomberElytra);
+                }
             } else {
                 sender.sendMessage("You are not allowed to use this command");
             }
