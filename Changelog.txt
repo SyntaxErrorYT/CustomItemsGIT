@@ -1,3 +1,27 @@
+15 August 2021:
+  Changed CustomItemsGIT.java:
+    -Listed commands for Throwable Fireball
+    -Registered events for Throwable Fireball
+    -Listed commands for Triple Shot Bow
+    -Registered events for Triple Shot Bow
+    -Listed commands for Bomber Elytra
+    -Registered events for Bomber Elytra
+  Changed ItemManager.java:
+    -Added item designs for Throwable Fireball
+    -Added item designs for Triple Shot Bow
+    -Added item designs for Bomber Elytra
+  Changed plugin.yml:
+    -Listed commands for Throwable Fireball
+    -Listed commands for Triple Shot Bow
+    -Listed commands for Bomber Elytra
+  Changed Commands.java:
+    -Created commands for Throwable Fireball
+    -Created commands for Triple Shot Bow
+    -Created commands for Bomber Elytra
+  Added Fireballs.java
+  Added TripleShotBow.java
+  Added BomberElytra.java
+
 23 July 2021:
   Changed CustomItemsGIT.java:
     -Listed commands for Smoke Bow
