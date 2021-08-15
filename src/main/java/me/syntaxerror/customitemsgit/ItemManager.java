@@ -33,6 +33,9 @@ public class ItemManager {
     public static ItemStack LightningAxe;
     public static ItemStack AutoSmeltPickaxe;
     public static ItemStack SmokeBow;
+    public static ItemStack Fireball;
+    public static ItemStack TripleShotBow;
+    public static ItemStack BomberElytra;
 
     public static void init() {
         createGrapplingHook();
@@ -53,6 +56,9 @@ public class ItemManager {
         createLightningAxe();
         createAutoSmeltPickaxe();
         createSmokeBow();
+        createFireball();
+        createTripleShotBow();
+        createBomberElytra();
     }
 
     private static void createGrapplingHook() {
@@ -314,5 +320,44 @@ public class ItemManager {
         meta.setLore(lore);
         item.setItemMeta(meta);
         SmokeBow = item;
+    }
+    private static void createFireball(){
+        ItemStack item = new ItemStack(Material.FIRE_CHARGE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Fireball");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: Fireball");
+        lore.add("§7Launches a fireball.");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        Fireball = item;
+    }
+    private static void createTripleShotBow(){
+        ItemStack item = new ItemStack(Material.BOW, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Triple Shot Bow");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: Three Shot");
+        lore.add("§7Shoots three arrows instead of 1.");
+        lore.add("§7The other 2 arrows deal half the damage");
+        lore.add("§7but a lot of knockback.");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        TripleShotBow = item;
+    }
+    private static void createBomberElytra(){
+        ItemStack item = new ItemStack(Material.ELYTRA, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Bomber Elytra");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: Bomber");
+        lore.add("§7Bomb everything below you when");
+        lore.add("§7you are gliding using this elytra.");
+        lore.add("");
+        lore.add("§eBomber mode: On");
+        lore.add("§eSneak to toggle mode.");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        BomberElytra = item;
     }
 }
