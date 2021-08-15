@@ -59,3 +59,12 @@ commands:
   givesmokebow:
     description: gives the player a smoke bow
     usage: /<command>
+  givefireball:
+    description: gives the player a fireball
+    usage: /<command>
+  givetripleshotbow:
+    description: gives the player a triple shot bow
+    usage: /<command>
+  givebomberelytra:
+    description: gives the player a bomber elytra
+    usage: /<command>
