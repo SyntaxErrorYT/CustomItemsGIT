@@ -68,3 +68,12 @@ commands:
   givebomberelytra:
     description: gives the player a bomber elytra
     usage: /<command>
+  giveautoshootchestplate:
+    description: gives the player an auto shoot chestplate
+    usage: /<command>
+  giveairstrikebow:
+    description: gives the player an air strike bow
+    usage: /<command>
+  givechunkminerpickaxe:
+    description: gives the player a chunk miner pickaxe
+    usage: /<command>
