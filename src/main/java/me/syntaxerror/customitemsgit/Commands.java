@@ -8,10 +8,7 @@ import org.bukkit.entity.Player;
 public class Commands implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (!(sender instanceof Player)) {
-            sender.sendMessage("Only players can use that command");
-            return true;
-        } else {
+        if (sender instanceof Player) {
             Player player = (Player)sender;
             if (player.hasPermission("op")) {
                 if (cmd.getName().equalsIgnoreCase("givegrapplinghook")) {
@@ -77,10 +74,23 @@ public class Commands implements CommandExecutor {
                 if(cmd.getName().equalsIgnoreCase("givebomberelytra")){
                     player.getInventory().addItem(ItemManager.BomberElytra);
                 }
-            } else {
+                if(cmd.getName().equalsIgnoreCase("giveautoshootchestplate")){
+                    player.getInventory().addItem(ItemManager.AutoShootChestplate);
+                }
+                if(cmd.getName().equalsIgnoreCase("giveairstrikebow")){
+                    player.getInventory().addItem(ItemManager.AirStrikeBow);
+                }
+                if(cmd.getName().equalsIgnoreCase("givechunkminerpickaxe")){
+                    player.getInventory().addItem(ItemManager.ChunkMinerPickaxe);
+                }
+            }
+            else {
                 sender.sendMessage("You are not allowed to use this command");
             }
-
+            return true;
+        }
+        else {
+            sender.sendMessage("Only players can use that command");
             return true;
         }
     }
