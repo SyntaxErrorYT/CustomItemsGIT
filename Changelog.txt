@@ -1,3 +1,28 @@
+20 September 2021:
+  Changed CustomItemsGIT.java:
+    -Listed commands for AutoShoot Chestplate
+    -Registered events for AutoShoot Chestplate
+    -Listed commands for Air Strike Bow
+    -Registered events for Air Strike Bow
+    -Listed commands for Chunk Miner Pickaxe
+    -Registered events for Chunk Miner Pickaxe
+  Changed ItemManager.java:
+    -Added item designs for AutoShoot Chestplate
+    -Added item designs for Air Strike Bow
+    -Added item designs for Chunk Miner Pickaxe
+  Changed plugin.yml:
+    -Listed commands for AutoShoot Chestplate
+    -Listed commands for Air Strike Bow
+    -Listed commands for Chunk Miner Pickaxe
+  Changed Commands.java:
+    -Made the code neater and easier to read
+    -Created commands for AutoShoot Chestplate
+    -Created commands for Air Strike Bow
+    -Created commands for Chunk Miner Pickaxe
+  Added AutoShootChestplate.java
+  Added AirStrikeBow.java
+  Added ChunkMinerPickaxe.java
+
 15 August 2021:
   Changed CustomItemsGIT.java:
     -Listed commands for Throwable Fireball
