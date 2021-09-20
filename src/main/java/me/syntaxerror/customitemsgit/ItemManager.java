@@ -36,6 +36,9 @@ public class ItemManager {
     public static ItemStack Fireball;
     public static ItemStack TripleShotBow;
     public static ItemStack BomberElytra;
+    public static ItemStack AutoShootChestplate;
+    public static ItemStack AirStrikeBow;
+    public static ItemStack ChunkMinerPickaxe;
 
     public static void init() {
         createGrapplingHook();
@@ -59,6 +62,9 @@ public class ItemManager {
         createFireball();
         createTripleShotBow();
         createBomberElytra();
+        createAutoShootChestplate();
+        createAirStrikeBow();
+        createChunkMinerPickaxe();
     }
 
     private static void createGrapplingHook() {
@@ -359,5 +365,45 @@ public class ItemManager {
         meta.setLore(lore);
         item.setItemMeta(meta);
         BomberElytra = item;
+    }
+    private static void createAutoShootChestplate(){
+        ItemStack item = new ItemStack(Material.IRON_CHESTPLATE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Auto Shoot Chestplate");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: ArroNT");
+        lore.add("§7Every 2 seconds shoots either an");
+        lore.add("§7arrow or TNT to all the mobs");
+        lore.add("§7within a 10 block radius.");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        AutoShootChestplate = item;
+    }
+    private static void createAirStrikeBow(){
+        ItemStack item = new ItemStack(Material.BOW, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Air Strike Bow");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: Air Strike");
+        lore.add("§7Calls a decent air strike");
+        lore.add("§7where the arrow lands.");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        AirStrikeBow = item;
+    }
+    private static void createChunkMinerPickaxe(){
+        ItemStack item = new ItemStack(Material.DIAMOND_PICKAXE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Chunk Miner Pickaxe");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: Chunk Mine");
+        lore.add("§7Mine an entire chunk up, teleporting");
+        lore.add("§7the resources into your inventory.");
+        lore.add("");
+        lore.add("§eDiamonds only mode: On");
+        lore.add("§eRight click to toggle mode.");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        ChunkMinerPickaxe = item;
     }
 }
