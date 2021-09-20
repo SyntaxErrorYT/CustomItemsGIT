@@ -34,6 +34,9 @@ public final class CustomItemsGIT extends JavaPlugin {
         this.getCommand("givefireball").setExecutor(new Commands());
         this.getCommand("givetripleshotbow").setExecutor(new Commands());
         this.getCommand("givebomberelytra").setExecutor(new Commands());
+        this.getCommand("giveautoshootchestplate").setExecutor(new Commands());
+        this.getCommand("giveairstrikebow").setExecutor(new Commands());
+        this.getCommand("givechunkminerpickaxe").setExecutor(new Commands());
 
         this.getServer().getPluginManager().registerEvents(new TeleportSword(), this);
         this.getServer().getPluginManager().registerEvents(new GrapplingHook(), this);
@@ -55,11 +58,15 @@ public final class CustomItemsGIT extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new Fireballs(this), this);
         this.getServer().getPluginManager().registerEvents(new TripleShotBow(), this);
         this.getServer().getPluginManager().registerEvents(new BomberElytra(this), this);
+        this.getServer().getPluginManager().registerEvents(new AirStrikeBow(), this);
+        this.getServer().getPluginManager().registerEvents(new ChunkMinerPickaxe(), this);
 
-        GrapplingHookCooldown.setupCooldown();
+        BukkitTask AutoShootChestplate = new AutoShootChestplate(this).runTaskTimer(this, 0, 40);
         
         this.getConfig().options().copyDefaults(true);
         this.saveDefaultConfig();
+        
+        GrapplingHookCooldown.setupCooldown();
     }
 
     @Override
