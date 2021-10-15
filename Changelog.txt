@@ -1,3 +1,21 @@
+15 October 2021:
+  Changed CustomItemsGIT.java:
+    -Listed commands for Ore Compass
+    -Registered events for Ore Compass
+    -Listed commands for Zombie Knight Spawn Egg
+    -Registered events for Zombie Knight Spawn Egg
+  Changed ItemManager.java:
+    -Added item designs for Ore Compass
+    -Added item designs for Zombie Knight Spawn Egg
+  Changed plugin.yml:
+    -Listed commands for Ore Compass
+    -Listed commands for Zombie Knight Spawn Egg
+  Changed Commands.java:
+    -Created commands for Ore Compass
+    -Created commands for Zombie Knight Spawn Egg
+  Added OreCompass.java
+  Added ZombieKnightSpawnEgg.java
+
 20 September 2021:
   Changed CustomItemsGIT.java:
     -Listed commands for AutoShoot Chestplate
