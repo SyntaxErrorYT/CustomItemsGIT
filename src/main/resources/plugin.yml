@@ -77,3 +77,9 @@ commands:
   givechunkminerpickaxe:
     description: gives the player a chunk miner pickaxe
     usage: /<command>
+  giveorecompass:
+    description: gives the player an ore compass
+    usage: /<command>
+  givezombieknightspawnegg:
+    description: gives the player a zombie knight spawn egg
+    usage: /<command>
