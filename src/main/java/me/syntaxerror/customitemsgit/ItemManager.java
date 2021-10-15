@@ -39,6 +39,8 @@ public class ItemManager {
     public static ItemStack AutoShootChestplate;
     public static ItemStack AirStrikeBow;
     public static ItemStack ChunkMinerPickaxe;
+    public static ItemStack OreCompass;
+    public static ItemStack ZombieKnightSpawnEgg;
 
     public static void init() {
         createGrapplingHook();
@@ -65,6 +67,8 @@ public class ItemManager {
         createAutoShootChestplate();
         createAirStrikeBow();
         createChunkMinerPickaxe();
+        createOreCompass();
+        createZombieKnightSpawnEgg();
     }
 
     private static void createGrapplingHook() {
@@ -405,5 +409,27 @@ public class ItemManager {
         meta.setLore(lore);
         item.setItemMeta(meta);
         ChunkMinerPickaxe = item;
+    }
+    private static void createOreCompass(){
+        ItemStack item = new ItemStack(Material.COMPASS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Ore Compass");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: Oreker");
+        lore.add("§7Points to the nearest ore");
+        lore.add("§7until the ore is broken.");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        OreCompass = item;
+    }
+    private static void createZombieKnightSpawnEgg(){
+        ItemStack item = new ItemStack(Material.ZOMBIE_SPAWN_EGG, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Zombie Knight Spawn Egg");
+        List<String> lore = new ArrayList<>();
+        lore.add("§7Spawns in a Zombie Knight");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        ZombieKnightSpawnEgg = item;
     }
 }
