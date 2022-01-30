@@ -89,6 +89,9 @@ public class Commands implements CommandExecutor {
                 if(cmd.getName().equalsIgnoreCase("givezombieknightspawnegg")){
                     player.getInventory().addItem(ItemManager.ZombieKnightSpawnEgg);
                 }
+                if(cmd.getName().equalsIgnoreCase("givedogdart")){
+                    player.getInventory().addItem(ItemManager.DogDart);
+                }
             }
             else {
                 sender.sendMessage("You are not allowed to use this command");
