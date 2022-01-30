@@ -83,3 +83,6 @@ commands:
   givezombieknightspawnegg:
     description: gives the player a zombie knight spawn egg
     usage: /<command>
+  givedogdart:
+    description: gives the player a dog dart
+    usage: /<command>
