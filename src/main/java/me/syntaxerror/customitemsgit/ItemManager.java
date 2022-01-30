@@ -41,6 +41,7 @@ public class ItemManager {
     public static ItemStack ChunkMinerPickaxe;
     public static ItemStack OreCompass;
     public static ItemStack ZombieKnightSpawnEgg;
+    public static ItemStack DogDart;
 
     public static void init() {
         createGrapplingHook();
@@ -69,6 +70,7 @@ public class ItemManager {
         createChunkMinerPickaxe();
         createOreCompass();
         createZombieKnightSpawnEgg();
+        createDogDart();
     }
 
     private static void createGrapplingHook() {
@@ -431,5 +433,19 @@ public class ItemManager {
         meta.setLore(lore);
         item.setItemMeta(meta);
         ZombieKnightSpawnEgg = item;
+    }
+    private static void createDogDart(){
+        ItemStack item = new ItemStack(Material.BONE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Dog Dart");
+        List<String> lore = new ArrayList<>();
+        lore.add("§6Item Ability: Summon!");
+        lore.add("§7Creates a dart that follows the direction");
+        lore.add("§7you look and summons dogs when it lands.");
+        lore.add("§7Dogs despawn after 20 seconds.");
+        lore.add("§eOne time use!");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+        DogDart = item;
     }
 }
