@@ -1,3 +1,15 @@
+30 January 2021:
+  Changed CustomItemsGIT.java:
+    -Listed commands for Dog Summoning Dart
+    -Registered events for Dog Summoning Dart
+  Changed ItemManager.java:
+    -Added item designs for Dog Summoning Dart
+  Changed plugin.yml:
+    -Listed commands for Dog Summoning Dart
+  Changed Commands.java:
+    -Created commands for Dog Summoning Dart
+  Added DogDart.java
+
 15 October 2021:
   Changed CustomItemsGIT.java:
     -Listed commands for Ore Compass
