@@ -39,6 +39,7 @@ public final class CustomItemsGIT extends JavaPlugin {
         this.getCommand("givechunkminerpickaxe").setExecutor(new Commands());
         this.getCommand("giveorecompass").setExecutor(new Commands());
         this.getCommand("givezombieknightspawnegg").setExecutor(new Commands());
+        this.getCommand("givedogdart").setExecutor(new Commands());
 
         this.getServer().getPluginManager().registerEvents(new TeleportSword(), this);
         this.getServer().getPluginManager().registerEvents(new GrapplingHook(), this);
@@ -64,6 +65,7 @@ public final class CustomItemsGIT extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new ChunkMinerPickaxe(), this);
         this.getServer().getPluginManager().registerEvents(new OreCompass(), this);
         this.getServer().getPluginManager().registerEvents(new ZombieKnightSpawnEgg(), this);
+        this.getServer().getPluginManager().registerEvents(new DogDart(this), this);
 
         BukkitTask AutoShootChestplate = new AutoShootChestplate(this).runTaskTimer(this, 0, 40);
         
