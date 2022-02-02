@@ -1,5 +1,6 @@
 package me.syntaxerror.customitemsgit.ItemEvents;
 
+import me.syntaxerror.customitemsgit.ItemManager;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,7 +16,7 @@ public class AutoSmeltPickaxe implements Listener {
     @EventHandler
     public void onBreak(BlockDropItemEvent event){
         if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta() != null && event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getLore() != null &&
-                event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getLore().contains("§6Item Ability: AutoSmelt")){
+                event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getLore().contains(ItemManager.AutoSmeltPickaxe.getItemMeta().getLore().get(0))){
 
             Iterator<Recipe> recipes = Bukkit.recipeIterator();
 
