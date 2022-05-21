@@ -11,8 +11,11 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MultibreakPickaxe implements Listener {
-    
+
     List<Block> blocks = new ArrayList<>();
 
     BlockFace blockface = null;
@@ -46,30 +49,7 @@ public class MultibreakPickaxe implements Listener {
                 blocks.add(block7);
                 blocks.add(block8);
                 for(Block b : blocks){
-                    if (b.getType().equals(Material.STONE)) {
-                        b.setType(Material.AIR);
-                        if (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)) {
-                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.STONE));
-                        } else {
-                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.COBBLESTONE));
-                        }
-                    }
-                    else if (b.getType().equals(Material.COAL_ORE)) {
-                        b.setType(Material.AIR);
-                        if (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)) {
-                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.COAL_ORE));
-                        } else {
-                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.COAL));
-                        }
-                    }
-                    else if (b.getType().equals(Material.IRON_ORE)) {
-                        b.setType(Material.AIR);
-                        block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.IRON_ORE));
-                    }
-                    else if (b.getType().equals(Material.GOLD_ORE)) {
-                        b.setType(Material.AIR);
-                        block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.GOLD_ORE));
-                    }
+                    b.breakNaturally(event.getPlayer().getInventory().getItemInMainHand());
                 }
                 blocks.clear();
             }
@@ -91,14 +71,7 @@ public class MultibreakPickaxe implements Listener {
                 blocks.add(block7);
                 blocks.add(block8);
                 for(Block b : blocks){
-                    if (b.getType().equals(Material.STONE)) {
-                        b.setType(Material.AIR);
-                        if (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)) {
-                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.STONE));
-                        } else {
-                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.COBBLESTONE));
-                        }
-                    }
+                    b.breakNaturally(event.getPlayer().getInventory().getItemInMainHand());
                 }
                 blocks.clear();
             }
@@ -120,14 +93,7 @@ public class MultibreakPickaxe implements Listener {
                 blocks.add(block7);
                 blocks.add(block8);
                 for(Block b : blocks){
-                    if (b.getType().equals(Material.STONE)) {
-                        b.setType(Material.AIR);
-                        if (event.getPlayer().getInventory().getItemInMainHand().getItemMeta().hasEnchant(Enchantment.SILK_TOUCH)) {
-                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.STONE));
-                        } else {
-                            block.getWorld().dropItemNaturally(b.getLocation(), new ItemStack(Material.COBBLESTONE));
-                        }
-                    }
+                    b.breakNaturally(event.getPlayer().getInventory().getItemInMainHand());
                 }
                 blocks.clear();
             }
