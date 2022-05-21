@@ -1,5 +1,6 @@
 package me.syntaxerror.customitemsgit.ItemEvents;
 
+import me.syntaxerror.customitemsgit.ItemManager;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -30,7 +31,8 @@ public class MultibreakPickaxe implements Listener {
     @EventHandler
     public void onBreak(BlockBreakEvent event){
         Block block = event.getBlock();
-        if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getLore().contains("§6Multibreak:")){
+        if(event.getPlayer().getInventory().getItemInMainHand().getItemMeta() != null && event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getLore() != null 
+                && event.getPlayer().getInventory().getItemInMainHand().getItemMeta().getLore().contains(ItemManager.MultibreakPickaxe.getItemMeta().getLore().get(1))){
             if (blockface.equals(BlockFace.UP) || blockface.equals(BlockFace.DOWN)) {
                 Block block1 = block.getRelative(BlockFace.EAST);
                 Block block2 = block.getRelative(BlockFace.WEST);
