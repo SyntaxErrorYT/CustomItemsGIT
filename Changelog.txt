@@ -1,3 +1,7 @@
+21 May 2022:
+  Changed MultibreakPickaxe.java:
+    -Changed code responsible for dropping block drops to be inclusive of all block types
+
 2 Febuary 2022:
   Changed GrapplingHook.java:
     -Improved lore check code
