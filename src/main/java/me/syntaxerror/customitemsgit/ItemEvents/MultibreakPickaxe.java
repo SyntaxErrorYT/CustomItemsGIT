@@ -61,6 +61,13 @@ public class MultibreakPickaxe implements Listener {
                 blocks.add(block.getRelative(BlockFace.DOWN).getRelative(BlockFace.WEST));
             }
             for(Block b : blocks){
+                /*
+                To add exceptions, for example, certain blocks not to be mined by the Multibreak Pickaxe, you add this if statement before the block break line:
+                if(b.getType() != Material.IRON_ORE && b.getType() != Material.DIRT){
+                    b.breakNaturally(event.getPlayer().getInventory().getItemInMainHand());
+                }
+                This example used is for Iron Ore and Dirt blocks, to change the type of material to ignore, just change the name of the material.
+                */
                 b.breakNaturally(event.getPlayer().getInventory().getItemInMainHand());
             }
             blocks.clear();
