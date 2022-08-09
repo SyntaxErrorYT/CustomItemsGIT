@@ -28,8 +28,8 @@ public class Boomerang implements Listener {
 
         if(player.getInventory().getItemInMainHand().getItemMeta() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore() != null
                 && player.getInventory().getItemInMainHand().getItemMeta().getLore().contains("§6Boomerang Powers:")) {
-            ArmorStand as = (ArmorStand) player.getWorld().spawnEntity(player.getLocation(), EntityType.ARMOR_STAND);
-            Location destination = player.getLocation().add(player.getLocation().getDirection().multiply(10));
+            ArmorStand as = (ArmorStand) player.getWorld().spawnEntity(player.getEyeLocation().subtract(0, 0.5, 0), EntityType.ARMOR_STAND);
+            Location destination = player.getEyeLocation().add(player.getEyeLocation().getDirection().multiply(10));
 
             as.setArms(true);
             as.setGravity(false);
@@ -40,7 +40,7 @@ public class Boomerang implements Listener {
 
             player.getInventory().removeItem(ItemManager.Boomerang);
 
-            Vector vector = destination.subtract(player.getLocation()).toVector();
+            Vector vector = destination.subtract(player.getEyeLocation().subtract(0, 0.5, 0)).toVector();
 
             new BukkitRunnable() {
 
