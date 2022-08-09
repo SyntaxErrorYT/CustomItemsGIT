@@ -38,7 +38,7 @@ public class Boomerang implements Listener {
             as.setItemInHand(new ItemStack(Material.BONE));
             as.setRightArmPose(new EulerAngle(Math.toRadians(0), Math.toRadians(120), Math.toRadians(0)));
 
-            player.getInventory().removeItem(ItemManager.Boomerang);
+            player.getInventory().getItemInMainHand().setAmount(player.getInventory().getItemInMainHand().getAmount() - 1);
 
             Vector vector = destination.subtract(player.getEyeLocation().subtract(0, 0.5, 0)).toVector();
 
