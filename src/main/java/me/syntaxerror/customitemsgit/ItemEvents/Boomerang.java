@@ -26,7 +26,7 @@ public class Boomerang implements Listener {
 
         Player player = event.getPlayer();
 
-        if(player.getInventory().getItemInMainHand().getItemMeta() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore() != null 
+        if(player.getInventory().getItemInMainHand().getItemMeta() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore() != null
                 && player.getInventory().getItemInMainHand().getItemMeta().getLore().contains("§6Boomerang Powers:")) {
             ArmorStand as = (ArmorStand) player.getWorld().spawnEntity(player.getLocation(), EntityType.ARMOR_STAND);
             Location destination = player.getLocation().add(player.getLocation().getDirection().multiply(10));
@@ -73,7 +73,7 @@ public class Boomerang implements Listener {
                     for (Entity entity : as.getLocation().getChunk().getEntities()) {
                         if (!as.isDead()) {
                             if (as.getLocation().distanceSquared(entity.getLocation()) < 1) {
-                                if (entity != player) {
+                                if (entity != player && entity instanceof LivingEntity) {
                                     LivingEntity livingentity = (LivingEntity) entity;
                                     livingentity.damage(1000, player);
                                 }
