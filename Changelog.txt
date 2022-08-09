@@ -1,6 +1,7 @@
 9 August 2022:
   Changed Boomerang.java:
     -Added null checks to prevent null pointer exceptions
+    -Added instanceof LivingEntity to prevent class cast exceptions
 
 21 May 2022:
   Changed MultibreakPickaxe.java:
