@@ -3,6 +3,7 @@
     -Added null checks to prevent null pointer exceptions
     -Added instanceof LivingEntity to prevent class cast exceptions
     -Changed spawning location of armorstand to a little higher
+    -Changed removing item from inventory to remove item from the slot player is using
 
 21 May 2022:
   Changed MultibreakPickaxe.java:
